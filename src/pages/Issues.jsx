@@ -1,22 +1,22 @@
+import * as React from 'react';
 import IssuesList from '../components/IssuesList';
 import LabelList from '../components/LabelList';
-import * as React from 'react';
+import StatusSelect from '../components/StatusSelect';
 
 export default function Issues() {
    const [labelsArray, setLabelsArray] = React.useState([]);
-   //console.log(labelsArray);
+   const [status, setStatus] = React.useState('');
    return (
       <div>
          <main>
             <section>
                <h1>Issues</h1>
-               <IssuesList labels={labelsArray} />
+               <IssuesList labels={labelsArray} status={status} />
             </section>
             <aside>
                <LabelList
                   selected={labelsArray}
                   toggle={(clickedLabel) => {
-                     // console.log(clickedLabel);
                      setLabelsArray((currentLabels) =>
                         currentLabels.includes(clickedLabel)
                            ? currentLabels.filter(
@@ -25,6 +25,11 @@ export default function Issues() {
                            : currentLabels.concat(clickedLabel)
                      );
                   }}
+               />
+               <h3>Status</h3>
+               <StatusSelect
+                  value={status}
+                  onChange={(event) => setStatus(event.target.value)}
                />
             </aside>
          </main>

@@ -121,6 +121,7 @@ hr {
 }
 main {
    display: flex;
+
    gap: 4rem;
 }
 section {
@@ -129,6 +130,7 @@ section {
 aside {
    flex: 1;
    display: flex;
+   margin-top: 138px;
    flex-direction: column;
    gap: 0.5rem;
 }
