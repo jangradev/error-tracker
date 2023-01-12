@@ -19,7 +19,6 @@ export default function IssuesList({ labels, status }) {
          ) : (
             <ul className='issues-list'>
                {issuesQuery.data.map((issue) => {
-                  console.log(issue);
                   return (
                      <IssueItem
                         key={issue.id}
